@@ -57,5 +57,18 @@ class OrdersListVC: UIViewController {
         print("Статус сменен на \(status)")
     }
     
+    
+    private func showCreatingOrderVC() {
+        
+        let storyboard = UIStoryboard(name: "CreatingOrder", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CreatingOrderVC") as! CreatingOrderVC
+        self.navigationController?.show(vc, sender: nil)
+    }
+    
+    
+    @IBAction func butAddTapped(_ sender: Any) {
+        showCreatingOrderVC()
+    }
+    
 
 }

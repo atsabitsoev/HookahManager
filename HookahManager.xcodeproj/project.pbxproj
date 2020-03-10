@@ -18,6 +18,13 @@
 		AC0D613A2416780A00DFE069 /* OrdersListTableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0D61392416780A00DFE069 /* OrdersListTableview.swift */; };
 		AC0D613D2416789500DFE069 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0D613C2416789500DFE069 /* Order.swift */; };
 		AC0D614024167E5900DFE069 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0D613F24167E5900DFE069 /* IntExtensions.swift */; };
+		AC9337A024181E740076F3BD /* CreatingOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC93379F24181E740076F3BD /* CreatingOrder.storyboard */; };
+		AC9337A224181EE90076F3BD /* CreatingOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9337A124181EE90076F3BD /* CreatingOrderVC.swift */; };
+		ACA0D8FD2418211100821D42 /* ButtonNext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0D8FC2418211100821D42 /* ButtonNext.swift */; };
+		ACA0D8FF2418241200821D42 /* CreatingOrderTableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0D8FE2418241200821D42 /* CreatingOrderTableview.swift */; };
+		ACA0D901241824B500821D42 /* CreatingOrderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0D900241824B500821D42 /* CreatingOrderConfiguration.swift */; };
+		ACA0D9042418258A00821D42 /* COCustomerCountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0D9032418258900821D42 /* COCustomerCountCell.swift */; };
+		ACA0D906241825B000821D42 /* COOrderOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0D905241825B000821D42 /* COOrderOptionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +42,13 @@
 		AC0D613F24167E5900DFE069 /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
 		AC0D61412416886600DFE069 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		AC0D61422416887600DFE069 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC93379F24181E740076F3BD /* CreatingOrder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreatingOrder.storyboard; sourceTree = "<group>"; };
+		AC9337A124181EE90076F3BD /* CreatingOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingOrderVC.swift; sourceTree = "<group>"; };
+		ACA0D8FC2418211100821D42 /* ButtonNext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNext.swift; sourceTree = "<group>"; };
+		ACA0D8FE2418241200821D42 /* CreatingOrderTableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingOrderTableview.swift; sourceTree = "<group>"; };
+		ACA0D900241824B500821D42 /* CreatingOrderConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingOrderConfiguration.swift; sourceTree = "<group>"; };
+		ACA0D9032418258900821D42 /* COCustomerCountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COCustomerCountCell.swift; sourceTree = "<group>"; };
+		ACA0D905241825B000821D42 /* COOrderOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COOrderOptionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +81,9 @@
 		AC0D6117241652F000DFE069 /* HookahManager */ = {
 			isa = PBXGroup;
 			children = (
+				ACA0D8FB241820F500821D42 /* UIElements */,
 				AC0D613E24167E2600DFE069 /* Extensions */,
-				AC0D61312416551200DFE069 /* OrdersList */,
+				AC0D61312416551200DFE069 /* Orders */,
 				AC0D612D241654D000DFE069 /* Main */,
 				AC0D612C241654BB00DFE069 /* SupportingFiles */,
 				AC0D6126241652F200DFE069 /* Info.plist */,
@@ -103,13 +118,14 @@
 			path = "View+Controller";
 			sourceTree = "<group>";
 		};
-		AC0D61312416551200DFE069 /* OrdersList */ = {
+		AC0D61312416551200DFE069 /* Orders */ = {
 			isa = PBXGroup;
 			children = (
+				AC93379C24181E4A0076F3BD /* OrdersList */,
+				AC93379D24181E540076F3BD /* CreatingOrder */,
 				AC0D613B2416788000DFE069 /* Entities */,
-				AC0D61322416551D00DFE069 /* View+Controller */,
 			);
-			path = OrdersList;
+			path = Orders;
 			sourceTree = "<group>";
 		};
 		AC0D61322416551D00DFE069 /* View+Controller */ = {
@@ -127,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				AC0D613C2416789500DFE069 /* Order.swift */,
+				ACA0D900241824B500821D42 /* CreatingOrderConfiguration.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -137,6 +154,50 @@
 				AC0D613F24167E5900DFE069 /* IntExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AC93379C24181E4A0076F3BD /* OrdersList */ = {
+			isa = PBXGroup;
+			children = (
+				AC0D61322416551D00DFE069 /* View+Controller */,
+			);
+			path = OrdersList;
+			sourceTree = "<group>";
+		};
+		AC93379D24181E540076F3BD /* CreatingOrder */ = {
+			isa = PBXGroup;
+			children = (
+				AC93379E24181E5D0076F3BD /* View+Controller */,
+			);
+			path = CreatingOrder;
+			sourceTree = "<group>";
+		};
+		AC93379E24181E5D0076F3BD /* View+Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AC93379F24181E740076F3BD /* CreatingOrder.storyboard */,
+				AC9337A124181EE90076F3BD /* CreatingOrderVC.swift */,
+				ACA0D9022418255F00821D42 /* Tableview */,
+			);
+			path = "View+Controller";
+			sourceTree = "<group>";
+		};
+		ACA0D8FB241820F500821D42 /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				ACA0D8FC2418211100821D42 /* ButtonNext.swift */,
+			);
+			path = UIElements;
+			sourceTree = "<group>";
+		};
+		ACA0D9022418255F00821D42 /* Tableview */ = {
+			isa = PBXGroup;
+			children = (
+				ACA0D8FE2418241200821D42 /* CreatingOrderTableview.swift */,
+				ACA0D9032418258900821D42 /* COCustomerCountCell.swift */,
+				ACA0D905241825B000821D42 /* COOrderOptionCell.swift */,
+			);
+			path = Tableview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +262,7 @@
 				AC0D6125241652F200DFE069 /* LaunchScreen.storyboard in Resources */,
 				AC0D6122241652F200DFE069 /* Assets.xcassets in Resources */,
 				AC0D61342416553400DFE069 /* OrdersList.storyboard in Resources */,
+				AC9337A024181E740076F3BD /* CreatingOrder.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,12 +274,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC0D614024167E5900DFE069 /* IntExtensions.swift in Sources */,
+				ACA0D8FD2418211100821D42 /* ButtonNext.swift in Sources */,
 				AC0D613D2416789500DFE069 /* Order.swift in Sources */,
+				ACA0D8FF2418241200821D42 /* CreatingOrderTableview.swift in Sources */,
+				AC9337A224181EE90076F3BD /* CreatingOrderVC.swift in Sources */,
+				ACA0D901241824B500821D42 /* CreatingOrderConfiguration.swift in Sources */,
 				AC0D6119241652F000DFE069 /* AppDelegate.swift in Sources */,
 				AC0D613A2416780A00DFE069 /* OrdersListTableview.swift in Sources */,
 				AC0D611B241652F000DFE069 /* SceneDelegate.swift in Sources */,
+				ACA0D9042418258A00821D42 /* COCustomerCountCell.swift in Sources */,
 				AC0D61362416554700DFE069 /* OrdersListVC.swift in Sources */,
 				AC0D6138241677E400DFE069 /* OrdersListOrderCell.swift in Sources */,
+				ACA0D906241825B000821D42 /* COOrderOptionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
