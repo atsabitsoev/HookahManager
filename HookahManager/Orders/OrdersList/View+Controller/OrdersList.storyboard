@@ -157,7 +157,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nja-D5-2B3"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Актуальные брони" id="hBU-ST-EK5"/>
+                    <navigationItem key="navigationItem" title="Актуальные брони" id="hBU-ST-EK5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="K2U-Oa-HHX">
+                            <connections>
+                                <action selector="butAddTapped:" destination="VID-MY-yYI" id="l64-Cg-UY0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="3ub-x6-vUT" id="25b-Tw-IPe"/>
                     </connections>
