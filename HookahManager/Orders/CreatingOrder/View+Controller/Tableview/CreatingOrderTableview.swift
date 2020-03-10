@@ -13,11 +13,11 @@ extension CreatingOrderVC: UITableViewDataSource {
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
+        if section == 0 || section == 1 {
             return 1
         }
         
@@ -33,6 +33,13 @@ extension CreatingOrderVC: UITableViewDataSource {
             if let configuration = configuration {
                 cell.stepperCustomersCount.maximumValue = Double(configuration.maxCustomerCount)
             }
+            return cell
+            
+        } else if indexPath.section == 1 {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CONameCell") as! CONameCell
+            cell.delegate = self
+            cell.configure(with: order?.customerName)
             return cell
             
         } else {
@@ -57,6 +64,8 @@ extension CreatingOrderVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return 153
+        } else if indexPath.section == 1 {
+            return 70
         } else {
             return 44
         }

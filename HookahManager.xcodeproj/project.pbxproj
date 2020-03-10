@@ -25,6 +25,7 @@
 		ACA0D901241824B500821D42 /* CreatingOrderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0D900241824B500821D42 /* CreatingOrderConfiguration.swift */; };
 		ACA0D9042418258A00821D42 /* COCustomerCountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0D9032418258900821D42 /* COCustomerCountCell.swift */; };
 		ACA0D906241825B000821D42 /* COOrderOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0D905241825B000821D42 /* COOrderOptionCell.swift */; };
+		ACA0D9082418387900821D42 /* CONameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0D9072418387900821D42 /* CONameCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		ACA0D900241824B500821D42 /* CreatingOrderConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingOrderConfiguration.swift; sourceTree = "<group>"; };
 		ACA0D9032418258900821D42 /* COCustomerCountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COCustomerCountCell.swift; sourceTree = "<group>"; };
 		ACA0D905241825B000821D42 /* COOrderOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COOrderOptionCell.swift; sourceTree = "<group>"; };
+		ACA0D9072418387900821D42 /* CONameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CONameCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 				ACA0D8FE2418241200821D42 /* CreatingOrderTableview.swift */,
 				ACA0D9032418258900821D42 /* COCustomerCountCell.swift */,
 				ACA0D905241825B000821D42 /* COOrderOptionCell.swift */,
+				ACA0D9072418387900821D42 /* CONameCell.swift */,
 			);
 			path = Tableview;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACA0D9082418387900821D42 /* CONameCell.swift in Sources */,
 				AC0D614024167E5900DFE069 /* IntExtensions.swift in Sources */,
 				ACA0D8FD2418211100821D42 /* ButtonNext.swift in Sources */,
 				AC0D613D2416789500DFE069 /* Order.swift in Sources */,

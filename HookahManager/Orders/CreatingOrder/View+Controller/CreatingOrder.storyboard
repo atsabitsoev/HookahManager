@@ -32,7 +32,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="732"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="X6I-co-jfc">
-                                    <rect key="frame" x="0.0" y="252" width="414" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="311.5" width="414" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </view>
@@ -93,22 +93,54 @@
                                             <outlet property="stepperCustomersCount" destination="6MI-MW-yri" id="h7n-LF-ikX"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CONameCell" rowHeight="59" id="cEf-Z0-smc" customClass="CONameCell" customModule="HookahManager" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="181" width="414" height="59"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cEf-Z0-smc" id="rmG-Sv-gYc">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAc-bD-GAV">
+                                                    <rect key="frame" x="20" y="11" width="29.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя посетителя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8TZ-Bh-FmX">
+                                                    <rect key="frame" x="20" y="32" width="374" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8TZ-Bh-FmX" firstAttribute="leading" secondItem="rmG-Sv-gYc" secondAttribute="leadingMargin" id="3Sk-nL-sNq"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="8TZ-Bh-FmX" secondAttribute="trailing" id="8yS-Y3-m38"/>
+                                                <constraint firstItem="dAc-bD-GAV" firstAttribute="top" secondItem="rmG-Sv-gYc" secondAttribute="topMargin" id="EdN-N7-brB"/>
+                                                <constraint firstItem="8TZ-Bh-FmX" firstAttribute="top" secondItem="dAc-bD-GAV" secondAttribute="bottom" constant="4" id="JHz-TN-w29"/>
+                                                <constraint firstItem="8TZ-Bh-FmX" firstAttribute="bottom" secondItem="rmG-Sv-gYc" secondAttribute="bottom" id="W2O-1B-vUY"/>
+                                                <constraint firstItem="dAc-bD-GAV" firstAttribute="leading" secondItem="rmG-Sv-gYc" secondAttribute="leadingMargin" id="aoQ-00-E7v"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tfName" destination="8TZ-Bh-FmX" id="W4b-Sg-NPl"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="COOrderOptionCell" id="7fN-ZK-RZx" customClass="COOrderOptionCell" customModule="HookahManager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="181" width="414" height="43"/>
+                                        <rect key="frame" x="0.0" y="240" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7fN-ZK-RZx" id="jtS-iJ-q9d">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7II-8U-73j">
-                                                    <rect key="frame" x="345" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="345" y="6.5" width="51" height="31"/>
                                                     <color key="onTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="switchIncludeChanged:" destination="7fN-ZK-RZx" eventType="valueChanged" id="sAv-GG-3HJ"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название опции" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQB-Kv-FKY">
-                                                    <rect key="frame" x="20" y="11" width="309" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="309" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -149,6 +181,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Новая бронь" id="cy9-vi-PRB"/>
                     <connections>
+                        <outlet property="butChooseDateTime" destination="Dat-xb-yV0" id="6SA-7D-OJP"/>
                         <outlet property="butConfirmDateTime" destination="HSW-Xb-5ZY" id="R8Z-dq-ymM"/>
                         <outlet property="labSelectedDay" destination="voV-7d-QGU" id="yqk-dC-Qmr"/>
                         <outlet property="labTitleSelectDateTime" destination="hBr-7X-NgN" id="btH-Hd-I8S"/>

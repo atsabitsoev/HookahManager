@@ -18,6 +18,7 @@ class CreatingOrderVC: UIViewController {
     @IBOutlet weak var labTitleSelectDateTime: UILabel!
     @IBOutlet weak var labSelectedDay: UILabel!
     @IBOutlet weak var butConfirmDateTime: UIButton!
+    @IBOutlet weak var butChooseDateTime: ButtonNext!
     
     var tapRecognizer: UITapGestureRecognizer!
             
@@ -50,6 +51,8 @@ class CreatingOrderVC: UIViewController {
                                                                         1583539200,
                                                                         1583798400])
         order = Order(id: nil, number: nil, customerCount: 1, options: [], dateTime: nil, orderStatus: .approved, customerName: nil)
+        
+        checkButChooseDateTime()
     }
 
 
@@ -148,6 +151,14 @@ class CreatingOrderVC: UIViewController {
     }
     
     
+    //MARK: Check ButChooseDateTime
+    private func checkButChooseDateTime() {
+        let enable = !(order?.customerName?.isEmpty ?? true)
+        butChooseDateTime.isEnabled = enable
+        butChooseDateTime.backgroundColor = enable ? UIColor.systemBlue : UIColor.systemBlue.withAlphaComponent(0.5)
+    }
+    
+    
     //MARK: API Work
     private func getAvailableFullDates() {
         availableFullDates = [1583589600, 1583591400, 1583600400, 1583609400]
@@ -208,6 +219,15 @@ extension CreatingOrderVC: COOrderOptionCellDelegate {
         print(order!.options)
     }
     
+}
+
+
+//MARK: Name Cell
+extension CreatingOrderVC: CONameCellDelegate {
+    func nameChanged(to name: String?) {
+        order?.customerName = name
+        checkButChooseDateTime()
+    }
 }
 
 
