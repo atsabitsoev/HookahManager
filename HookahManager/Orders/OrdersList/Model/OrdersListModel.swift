@@ -12,19 +12,6 @@ import Firebase
 
 class OrdersListModel {
     
-    func fetchOrders() {
-        
-        let db = Firestore.firestore()
-        db.collectionGroup("orders").getDocuments { (querySnapshot, error) in
-            if let error = error {
-                print(error)
-            } else {
-                for document in querySnapshot!.documents {
-                    print((document.data()["orderStatus"]! as! DocumentReference)["name"])
-                }
-            }
-        }
-        
-    }
+    
     
 }
