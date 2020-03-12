@@ -14,6 +14,9 @@ class OrdersListVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
+    var model = OrdersListModel()
+    
+    
     var orders: [Order] = []
     
 
@@ -26,6 +29,7 @@ class OrdersListVC: UIViewController {
     
     private func reloadOrders() {
         
+        model.fetchOrders()
         let option1 = OrderOption(id: 1, name: "У окна")
         let option2 = OrderOption(id: 2, name: "Рядом с туалетом")
         

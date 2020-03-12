@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,8 @@
 		AC0D613A2416780A00DFE069 /* OrdersListTableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0D61392416780A00DFE069 /* OrdersListTableview.swift */; };
 		AC0D613D2416789500DFE069 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0D613C2416789500DFE069 /* Order.swift */; };
 		AC0D614024167E5900DFE069 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0D613F24167E5900DFE069 /* IntExtensions.swift */; };
+		AC555EAB24197B0F005A8847 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC555EAA24197B0F005A8847 /* GoogleService-Info.plist */; };
+		AC555EAE2419826B005A8847 /* OrdersListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC555EAD2419826B005A8847 /* OrdersListModel.swift */; };
 		AC9337A024181E740076F3BD /* CreatingOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC93379F24181E740076F3BD /* CreatingOrder.storyboard */; };
 		AC9337A224181EE90076F3BD /* CreatingOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9337A124181EE90076F3BD /* CreatingOrderVC.swift */; };
 		ACA0D8FD2418211100821D42 /* ButtonNext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0D8FC2418211100821D42 /* ButtonNext.swift */; };
@@ -26,9 +28,11 @@
 		ACA0D9042418258A00821D42 /* COCustomerCountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0D9032418258900821D42 /* COCustomerCountCell.swift */; };
 		ACA0D906241825B000821D42 /* COOrderOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0D905241825B000821D42 /* COOrderOptionCell.swift */; };
 		ACA0D9082418387900821D42 /* CONameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0D9072418387900821D42 /* CONameCell.swift */; };
+		D91484C2211381F2377C77F6 /* Pods_HookahManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D114CDBE5050B024A13009B /* Pods_HookahManager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D114CDBE5050B024A13009B /* Pods_HookahManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HookahManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0D6115241652F000DFE069 /* HookahManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HookahManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0D6118241652F000DFE069 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC0D611A241652F000DFE069 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +47,8 @@
 		AC0D613F24167E5900DFE069 /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
 		AC0D61412416886600DFE069 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		AC0D61422416887600DFE069 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC555EAA24197B0F005A8847 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AC555EAD2419826B005A8847 /* OrdersListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListModel.swift; sourceTree = "<group>"; };
 		AC93379F24181E740076F3BD /* CreatingOrder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreatingOrder.storyboard; sourceTree = "<group>"; };
 		AC9337A124181EE90076F3BD /* CreatingOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingOrderVC.swift; sourceTree = "<group>"; };
 		ACA0D8FC2418211100821D42 /* ButtonNext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNext.swift; sourceTree = "<group>"; };
@@ -51,6 +57,8 @@
 		ACA0D9032418258900821D42 /* COCustomerCountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COCustomerCountCell.swift; sourceTree = "<group>"; };
 		ACA0D905241825B000821D42 /* COOrderOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COOrderOptionCell.swift; sourceTree = "<group>"; };
 		ACA0D9072418387900821D42 /* CONameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CONameCell.swift; sourceTree = "<group>"; };
+		F6BB56AFFFC0F307321AA0D8 /* Pods-HookahManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HookahManager.debug.xcconfig"; path = "Target Support Files/Pods-HookahManager/Pods-HookahManager.debug.xcconfig"; sourceTree = "<group>"; };
+		FD3985A582A077F50E391C7E /* Pods-HookahManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HookahManager.release.xcconfig"; path = "Target Support Files/Pods-HookahManager/Pods-HookahManager.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D91484C2211381F2377C77F6 /* Pods_HookahManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +78,8 @@
 			children = (
 				AC0D6117241652F000DFE069 /* HookahManager */,
 				AC0D6116241652F000DFE069 /* Products */,
+				F96CC00802ECB9400195E6BA /* Pods */,
+				FB0D7B877FDB789EB42FB757 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +100,7 @@
 				AC0D612D241654D000DFE069 /* Main */,
 				AC0D612C241654BB00DFE069 /* SupportingFiles */,
 				AC0D6126241652F200DFE069 /* Info.plist */,
+				AC555EAA24197B0F005A8847 /* GoogleService-Info.plist */,
 			);
 			path = HookahManager;
 			sourceTree = "<group>";
@@ -158,10 +170,19 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		AC555EAC2419825A005A8847 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AC555EAD2419826B005A8847 /* OrdersListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AC93379C24181E4A0076F3BD /* OrdersList */ = {
 			isa = PBXGroup;
 			children = (
 				AC0D61322416551D00DFE069 /* View+Controller */,
+				AC555EAC2419825A005A8847 /* Model */,
 			);
 			path = OrdersList;
 			sourceTree = "<group>";
@@ -203,6 +224,23 @@
 			path = Tableview;
 			sourceTree = "<group>";
 		};
+		F96CC00802ECB9400195E6BA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F6BB56AFFFC0F307321AA0D8 /* Pods-HookahManager.debug.xcconfig */,
+				FD3985A582A077F50E391C7E /* Pods-HookahManager.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FB0D7B877FDB789EB42FB757 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D114CDBE5050B024A13009B /* Pods_HookahManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -210,9 +248,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC0D6129241652F200DFE069 /* Build configuration list for PBXNativeTarget "HookahManager" */;
 			buildPhases = (
+				CE19687C8F23470419BC80F3 /* [CP] Check Pods Manifest.lock */,
 				AC0D6111241652F000DFE069 /* Sources */,
 				AC0D6112241652F000DFE069 /* Frameworks */,
 				AC0D6113241652F000DFE069 /* Resources */,
+				C72C230DF953F76B331A0CA1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,6 +303,7 @@
 			files = (
 				AC0D6130241654F900DFE069 /* Main.storyboard in Resources */,
 				AC0D6125241652F200DFE069 /* LaunchScreen.storyboard in Resources */,
+				AC555EAB24197B0F005A8847 /* GoogleService-Info.plist in Resources */,
 				AC0D6122241652F200DFE069 /* Assets.xcassets in Resources */,
 				AC0D61342416553400DFE069 /* OrdersList.storyboard in Resources */,
 				AC9337A024181E740076F3BD /* CreatingOrder.storyboard in Resources */,
@@ -270,6 +311,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C72C230DF953F76B331A0CA1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HookahManager/Pods-HookahManager-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HookahManager/Pods-HookahManager-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HookahManager/Pods-HookahManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE19687C8F23470419BC80F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HookahManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AC0D6111241652F000DFE069 /* Sources */ = {
@@ -284,6 +367,7 @@
 				AC9337A224181EE90076F3BD /* CreatingOrderVC.swift in Sources */,
 				ACA0D901241824B500821D42 /* CreatingOrderConfiguration.swift in Sources */,
 				AC0D6119241652F000DFE069 /* AppDelegate.swift in Sources */,
+				AC555EAE2419826B005A8847 /* OrdersListModel.swift in Sources */,
 				AC0D613A2416780A00DFE069 /* OrdersListTableview.swift in Sources */,
 				AC0D611B241652F000DFE069 /* SceneDelegate.swift in Sources */,
 				ACA0D9042418258A00821D42 /* COCustomerCountCell.swift in Sources */,
@@ -426,6 +510,7 @@
 		};
 		AC0D612A241652F200DFE069 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6BB56AFFFC0F307321AA0D8 /* Pods-HookahManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -444,6 +529,7 @@
 		};
 		AC0D612B241652F200DFE069 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD3985A582A077F50E391C7E /* Pods-HookahManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

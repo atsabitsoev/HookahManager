@@ -1,0 +1,6 @@
+framework module Pods_HookahManager {
+  umbrella header "Pods-HookahManager-umbrella.h"
+
+  export *
+  module * { export * }
+}
