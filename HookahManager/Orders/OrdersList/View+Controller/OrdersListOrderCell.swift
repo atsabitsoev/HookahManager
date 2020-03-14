@@ -53,7 +53,7 @@ class OrdersListOrderCell: UITableViewCell {
         
         let labels = options.map { (option) -> UILabel in
             let label = UILabel()
-            label.text = "– " + option.name
+            label.text = "– " + (option.name ?? "Опция недоступна")
             return label
         }
         stackOptions.arrangedSubviews.forEach { (view) in

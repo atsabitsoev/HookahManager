@@ -44,9 +44,9 @@ class CreatingOrderVC: UIViewController {
         setDelegates()
         
         configuration = CreatingOrderConfiguration(maxCustomerCount: 5,
-                                                        availableOptions: [OrderOption(id: 1, name: "У окна"),
-                                                                           OrderOption(id: 2, name: "Мягкие сидения"),
-                                                                           OrderOption(id: 3, name: "Близко к туалету")],
+                                                        availableOptions: [OrderOption(id: "1", name: "У окна"),
+                                                                           OrderOption(id: "2", name: "Мягкие сидения"),
+                                                                           OrderOption(id: "3", name: "Близко к туалету")],
                                                         availableDays: [1583452800,
                                                                         1583539200,
                                                                         1583798400])

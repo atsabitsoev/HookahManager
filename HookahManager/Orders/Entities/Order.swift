@@ -12,7 +12,7 @@ import Foundation
 class Order {
     
     
-    init(id: Int?,
+    init(id: String?,
          number: String?,
          customerCount: Int?,
          options: [OrderOption]? = [],
@@ -30,7 +30,7 @@ class Order {
     }
     
     
-    var id: Int?
+    var id: String?
     var number: String?
     var customerCount: Int?
     var options: [OrderOption]?
@@ -41,20 +41,20 @@ class Order {
 }
 
 
-enum OrderStatus: Int {
+enum OrderStatus: String {
     
-    case waiting = 1
-    case approved = 2
-    case deniedByUser = 3
-    case deniedByManager = 4
-    case finished = 5
+    case waiting
+    case approved
+    case deniedByUser
+    case deniedByManager
+    case finished
     
 }
 
 
 struct OrderOption: Equatable {
     
-    var id: Int
-    var name: String
+    var id: String?
+    var name: String?
     
 }
