@@ -19,7 +19,16 @@ class OrdersListModel {
     //MARK: Fetch Orders
     func fetchOrders(_ handler: @escaping (_ orders: [Order]?, _ errorString: String?) -> ()) {
                 
-        db.collection("orders").whereField("status", in: ["waiting", "approved"]).addSnapshotListener { (querySnap, error) in
+        guard let restaurantId = UserCurrentState.standard.restaurant?.id else {
+            handler(nil, "Невозможно определить ресторан")
+            return
+        }
+        
+        db.collection("restaurants")
+            .document(restaurantId)
+            .collection("orders")
+            .whereField("status", in: ["waiting", "approved"])
+            .addSnapshotListener { (querySnap, error) in
             
             guard error == nil else {
                 print(error!)
@@ -71,7 +80,18 @@ class OrdersListModel {
             handler(false, "Невозможно получить id заказа")
             return
         }
-        db.collection("orders").document(id).updateData(["status": newStatus.rawValue]) { (error) in
+        
+        guard let restaurantId = UserCurrentState.standard.restaurant?.id else {
+            handler(false, "Ресторан не определен")
+            return
+        }
+        
+        db.collection("restaurants")
+            .document(restaurantId)
+            .collection("orders")
+            .document(id)
+            .updateData(["status": newStatus.rawValue]) { (error) in
+                
             if let error = error {
                 handler(false, error.localizedDescription)
                 return

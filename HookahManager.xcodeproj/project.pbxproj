@@ -20,6 +20,8 @@
 		AC0D614024167E5900DFE069 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0D613F24167E5900DFE069 /* IntExtensions.swift */; };
 		AC555EAB24197B0F005A8847 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC555EAA24197B0F005A8847 /* GoogleService-Info.plist */; };
 		AC555EAE2419826B005A8847 /* OrdersListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC555EAD2419826B005A8847 /* OrdersListModel.swift */; };
+		AC64DBEF241D725500A74319 /* UserCurrentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64DBEE241D725500A74319 /* UserCurrentState.swift */; };
+		AC64DBF2241D72D300A74319 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64DBF1241D72D300A74319 /* Restaurant.swift */; };
 		AC9337A024181E740076F3BD /* CreatingOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC93379F24181E740076F3BD /* CreatingOrder.storyboard */; };
 		AC9337A224181EE90076F3BD /* CreatingOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9337A124181EE90076F3BD /* CreatingOrderVC.swift */; };
 		ACA0D8FD2418211100821D42 /* ButtonNext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0D8FC2418211100821D42 /* ButtonNext.swift */; };
@@ -49,6 +51,8 @@
 		AC0D61422416887600DFE069 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC555EAA24197B0F005A8847 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AC555EAD2419826B005A8847 /* OrdersListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListModel.swift; sourceTree = "<group>"; };
+		AC64DBEE241D725500A74319 /* UserCurrentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCurrentState.swift; sourceTree = "<group>"; };
+		AC64DBF1241D72D300A74319 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		AC93379F24181E740076F3BD /* CreatingOrder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreatingOrder.storyboard; sourceTree = "<group>"; };
 		AC9337A124181EE90076F3BD /* CreatingOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingOrderVC.swift; sourceTree = "<group>"; };
 		ACA0D8FC2418211100821D42 /* ButtonNext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNext.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 		AC0D6117241652F000DFE069 /* HookahManager */ = {
 			isa = PBXGroup;
 			children = (
+				AC64DBED241D722200A74319 /* AppStateEntities+Services */,
+				AC64DBF0241D72BA00A74319 /* GlobalModelEntities */,
 				ACA0D8FB241820F500821D42 /* UIElements */,
 				AC0D613E24167E2600DFE069 /* Extensions */,
 				AC0D61312416551200DFE069 /* Orders */,
@@ -176,6 +182,22 @@
 				AC555EAD2419826B005A8847 /* OrdersListModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AC64DBED241D722200A74319 /* AppStateEntities+Services */ = {
+			isa = PBXGroup;
+			children = (
+				AC64DBEE241D725500A74319 /* UserCurrentState.swift */,
+			);
+			path = "AppStateEntities+Services";
+			sourceTree = "<group>";
+		};
+		AC64DBF0241D72BA00A74319 /* GlobalModelEntities */ = {
+			isa = PBXGroup;
+			children = (
+				AC64DBF1241D72D300A74319 /* Restaurant.swift */,
+			);
+			path = GlobalModelEntities;
 			sourceTree = "<group>";
 		};
 		AC93379C24181E4A0076F3BD /* OrdersList */ = {
@@ -363,6 +385,7 @@
 				AC0D614024167E5900DFE069 /* IntExtensions.swift in Sources */,
 				ACA0D8FD2418211100821D42 /* ButtonNext.swift in Sources */,
 				AC0D613D2416789500DFE069 /* Order.swift in Sources */,
+				AC64DBEF241D725500A74319 /* UserCurrentState.swift in Sources */,
 				ACA0D8FF2418241200821D42 /* CreatingOrderTableview.swift in Sources */,
 				AC9337A224181EE90076F3BD /* CreatingOrderVC.swift in Sources */,
 				ACA0D901241824B500821D42 /* CreatingOrderConfiguration.swift in Sources */,
@@ -372,6 +395,7 @@
 				AC0D611B241652F000DFE069 /* SceneDelegate.swift in Sources */,
 				ACA0D9042418258A00821D42 /* COCustomerCountCell.swift in Sources */,
 				AC0D61362416554700DFE069 /* OrdersListVC.swift in Sources */,
+				AC64DBF2241D72D300A74319 /* Restaurant.swift in Sources */,
 				AC0D6138241677E400DFE069 /* OrdersListOrderCell.swift in Sources */,
 				ACA0D906241825B000821D42 /* COOrderOptionCell.swift in Sources */,
 			);

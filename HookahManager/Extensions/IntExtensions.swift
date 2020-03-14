@@ -15,7 +15,7 @@ extension Int {
 
         let date = Date(timeIntervalSince1970: Double(self))
         let formatter = DateFormatter()
-        formatter.timeZone = TimeZone(abbreviation: "UTC")
+        formatter.timeZone = TimeZone(abbreviation: "UTC3")
         formatter.dateFormat = dateFormat
         let string = formatter.string(from: date)
         return string
