@@ -45,21 +45,23 @@ class OrdersListModel {
                 
                 let docData = document.data()
                 
-                let optionsDict = document["options"] as? [[String: Any]]
-                let options = optionsDict?.compactMap({ (dict) -> OrderOption? in
-                    return OrderOption(id: dict["id"] as? String,
-                                       name: dict["name"] as? String)
-                })
+                let tableDict = docData["table"] as? [String: Any]
+                let tableSizeDict = tableDict?["size"] as? [String: Any]
+                let tableSize = TableSize(id: tableSizeDict?["tableSizeId"] as? String,
+                                          name: tableSizeDict?["name"] as? String,
+                                          maxCount: tableSizeDict?["maxCount"] as? Int)
+                let table = Table(id: tableDict?["tableId"] as? String,
+                                  size: tableSize,
+                                  options: tableDict?["options"] as? [String])
                 
-                let dateTimeTimeStamp = (docData["dateTime"] as? Timestamp)
-                let dateTime = Int((dateTimeTimeStamp?.seconds ?? 0))
+                let dateTimeInt64 = (docData["dateTime"] as? Timestamp)?.seconds ?? 0
+                let dateTime = Int(dateTimeInt64)
                 
                 let order = Order(id: document.documentID,
                                   number: docData["number"] as? String,
-                                  customerCount: docData["customerCount"] as? Int,
-                                  options: options,
+                                  table: table,
                                   dateTime: dateTime,
-                                  orderStatus: OrderStatus(rawValue: (docData["status"] as? String ?? "")),
+                                  orderStatus: OrderStatus(rawValue: docData["status"] as? String ?? ""),
                                   customerName: docData["customerName"] as? String)
                 return order
             }

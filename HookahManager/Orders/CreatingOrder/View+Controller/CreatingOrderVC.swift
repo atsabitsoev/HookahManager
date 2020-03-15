@@ -23,7 +23,46 @@ class CreatingOrderVC: UIViewController {
     var tapRecognizer: UITapGestureRecognizer!
             
     
-    var configuration: CreatingOrderConfiguration?
+    var availableDays: [Int]?
+    
+    var availableTableSizes: [TableSize]?
+    var selectedTableSizeIndex: Int? {
+        didSet {
+            let tables = availableTables.filter { (table) -> Bool in
+                guard let selectedTableSizeIndex = selectedTableSizeIndex,
+                    let allSizes = availableTableSizes else { return false }
+                return table.size == allSizes[selectedTableSizeIndex]
+            }
+            tablesWithSelectedSize = tables
+        }
+    }
+    
+    var availableTables: [Table] = [] {
+        didSet {
+            var sizes = [TableSize]()
+            for table in availableTables {
+                guard let size = table.size else { continue }
+                if sizes.contains(size) {
+                    continue
+                } else {
+                    sizes.append(size)
+                }
+            }
+            availableTableSizes = sizes
+        }
+    }
+    var tablesWithSelectedSize: [Table] = []
+    var selectedTableIndex: Int? {
+        didSet {
+            if let index = selectedTableIndex {
+                let selectedTable = tablesWithSelectedSize[index]
+                self.order?.table = selectedTable
+            } else {
+                self.order?.table = nil
+            }
+        }
+    }
+    
     var order: Order?
     
     
@@ -42,16 +81,17 @@ class CreatingOrderVC: UIViewController {
         configureTapRecognizer()
         configureViewSelectDateTime()
         setDelegates()
+        setEmptyOrder()
         
-        configuration = CreatingOrderConfiguration(maxCustomerCount: 5,
-                                                        availableOptions: [OrderOption(id: "1", name: "У окна"),
-                                                                           OrderOption(id: "2", name: "Мягкие сидения"),
-                                                                           OrderOption(id: "3", name: "Близко к туалету")],
-                                                        availableDays: [1583452800,
-                                                                        1583539200,
-                                                                        1583798400])
-        order = Order(id: nil, number: nil, customerCount: 1, options: [], dateTime: nil, orderStatus: .approved, customerName: nil)
-        
+        availableTables = [Table(id: "jfsdsdf",
+                                 size: TableSize(id: "sfdoii", name: "Маленький", maxCount: 2),
+                                 options: ["У окна", "С PlayStation"]),
+                           Table(id: "dfgfgsfg",
+                                 size: TableSize(id: "4gsffg", name: "Средний", maxCount: 4),
+                                 options: ["Мягкие сидения"]),
+                           Table(id: "gterggeregr",
+                                 size: TableSize(id: "4gsffg", name: "Средний", maxCount: 4),
+                                 options: ["У окна", "С PlayStation"])]
         checkButChooseDateTime()
     }
 
@@ -87,6 +127,17 @@ class CreatingOrderVC: UIViewController {
     @objc private func viewTapped() {
         hideViewSelectDateTime()
         availableFullDates = []
+    }
+    
+    
+    //MARK: EMPTY ORDER
+    private func setEmptyOrder() {
+        order = Order(id: nil,
+                      number: nil,
+                      table: nil,
+                      dateTime: nil,
+                      orderStatus: .approved,
+                      customerName: nil)
     }
     
     
@@ -143,7 +194,7 @@ class CreatingOrderVC: UIViewController {
     private func reloadViewSelectDateTime() {
         pickerView.reloadAllComponents()
         labTitleSelectDateTime.text = shouldShowTimes ? "Выбрать время" : "Выбрать день"
-        labSelectedDay.text = shouldShowTimes ? configuration?.availableDays[pickerView.selectedRow(inComponent: 0)].getDateStringFromSeconds(dateFormat: "dd/MM/yyyy") : ""
+        labSelectedDay.text = shouldShowTimes ? availableDays?[pickerView.selectedRow(inComponent: 0)].getDateStringFromSeconds(dateFormat: "dd/MM/yyyy") : ""
         let butTitle = shouldShowTimes ? "Забронировать" : "Подтвердить"
         let butColor = shouldShowTimes ? UIColor.systemGreen : UIColor.systemBlue
         butConfirmDateTime.setTitle(butTitle, for: .normal)
@@ -153,7 +204,7 @@ class CreatingOrderVC: UIViewController {
     
     //MARK: Check ButChooseDateTime
     private func checkButChooseDateTime() {
-        let enable = !(order?.customerName?.isEmpty ?? true)
+        let enable = !(order?.customerName?.isEmpty ?? true) && order?.table != nil
         butChooseDateTime.isEnabled = enable
         butChooseDateTime.backgroundColor = enable ? UIColor.systemBlue : UIColor.systemBlue.withAlphaComponent(0.5)
     }
@@ -194,34 +245,6 @@ class CreatingOrderVC: UIViewController {
 //MARK: Extensions
 
 
-
-//MARK: Customer Count Cell
-extension CreatingOrderVC: COCustomerCountCellDelegate {
-    
-    func customerCountChanged(to count: Int) {
-        order?.customerCount = count
-    }
-    
-}
-
-
-//MARK: Option Cell
-extension CreatingOrderVC: COOrderOptionCellDelegate {
-    
-    func addOption(option: OrderOption) {
-        order?.options?.append(option)
-        print(order!.options)
-    }
-    
-    func deleteOption(option: OrderOption) {
-        guard let indexOfOption = order?.options?.firstIndex(of: option) else { return }
-        order?.options?.remove(at: indexOfOption)
-        print(order!.options)
-    }
-    
-}
-
-
 //MARK: Name Cell
 extension CreatingOrderVC: CONameCellDelegate {
     func nameChanged(to name: String?) {
@@ -242,7 +265,7 @@ extension CreatingOrderVC: UIPickerViewDataSource {
         if shouldShowTimes {
             return availableFullDates.count
         } else {
-            return configuration?.availableDays.count ?? 0
+            return availableDays?.count ?? 0
         }
     }
     
@@ -254,7 +277,7 @@ extension CreatingOrderVC: UIPickerViewDelegate {
         if shouldShowTimes {
             return availableFullDates[row].getDateStringFromSeconds(dateFormat: "HH:mm")
         } else {
-            return configuration?.availableDays[row].getDateStringFromSeconds(dateFormat: "d MMMM")
+            return availableDays?[row].getDateStringFromSeconds(dateFormat: "d MMMM")
         }
     }
     
@@ -270,3 +293,49 @@ extension CreatingOrderVC: UIGestureRecognizerDelegate {
         return locationY < 0
     }
 }
+
+
+//MARK: COSelectTableSizeCell
+extension CreatingOrderVC: COSelectTableSizeCellDelegate {
+    
+    func sizeSelected(sizeIndex: Int, selected: Bool) {
+        
+        self.selectedTableIndex = nil
+        
+        if selected {
+            if selectedTableSizeIndex == nil {
+                self.selectedTableSizeIndex = sizeIndex
+                tableView.insertRows(at: [IndexPath(row: 1, section: 0)], with: .automatic)
+            } else {
+                self.selectedTableSizeIndex = sizeIndex
+                tableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .automatic)
+            }
+        } else {
+            self.selectedTableSizeIndex = nil
+            tableView.deleteRows(at: [IndexPath(row: 1, section: 0)], with: .automatic)
+        }
+                
+    }
+    
+}
+
+
+//MARK: COSelectTableCell
+extension CreatingOrderVC: COSelectTableCellDelegate {
+    
+    func tableSelected(tableIndex: Int, selected: Bool) {
+        
+        if selected {
+            self.selectedTableIndex = tableIndex
+        } else {
+            self.selectedTableIndex = nil
+        }
+        
+        checkButChooseDateTime()
+        
+    }
+    
+}
+
+
+

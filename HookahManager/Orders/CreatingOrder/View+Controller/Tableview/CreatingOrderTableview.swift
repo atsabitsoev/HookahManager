@@ -13,48 +13,47 @@ extension CreatingOrderVC: UITableViewDataSource {
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 || section == 1 {
-            return 1
+        if section == 0 {
+            return selectedTableSizeIndex == nil ? 1 : 2
         }
         
-        return configuration?.availableOptions.count ?? 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "COCustomerCountCell") as! COCustomerCountCell
-            cell.delegate = self
-            if let configuration = configuration {
-                cell.stepperCustomersCount.maximumValue = Double(configuration.maxCustomerCount)
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "COSelectTableSizeCell") as! COSelectTableSizeCell
+                cell.configure(sizes: availableTableSizes ?? [], selectedSizeIndex: selectedTableSizeIndex)
+                cell.delegate = self
+                return cell
+                
+            } else {
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: "COSelectTableCell") as! COSelectTableCell
+                cell.configure(tables: tablesWithSelectedSize,
+                               selectedTableIndex: selectedTableIndex)
+                cell.delegate = self
+                return cell
+                
             }
-            return cell
-            
-        } else if indexPath.section == 1 {
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CONameCell") as! CONameCell
-            cell.delegate = self
-            cell.configure(with: order?.customerName)
-            return cell
             
         } else {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "COOrderOptionCell") as! COOrderOptionCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CONameCell") as! CONameCell
+            cell.configure(with: order?.customerName)
             cell.delegate = self
-            guard let currentOrderOption = configuration?.availableOptions[indexPath.row] else { return UITableViewCell() }
-            let isIncluded = order?.options?.contains(currentOrderOption) ?? false
-            cell.fill(with: currentOrderOption, isIncluded: isIncluded)
             return cell
             
         }
         
     }
-    
     
 }
 
@@ -63,11 +62,9 @@ extension CreatingOrderVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 153
-        } else if indexPath.section == 1 {
-            return 70
+            return UITableView.automaticDimension
         } else {
-            return 44
+            return 59
         }
     }
     

@@ -14,16 +14,14 @@ class Order {
     
     init(id: String?,
          number: String?,
-         customerCount: Int?,
-         options: [OrderOption]? = [],
+         table: Table?,
          dateTime: Int?,
          orderStatus: OrderStatus?,
          customerName: String?) {
         
         self.id = id
         self.number = number
-        self.customerCount = customerCount
-        self.options = options
+        self.table = table
         self.dateTime = dateTime
         self.orderStatus = orderStatus
         self.customerName = customerName
@@ -32,8 +30,7 @@ class Order {
     
     var id: String?
     var number: String?
-    var customerCount: Int?
-    var options: [OrderOption]?
+    var table: Table?
     var dateTime: Int?
     var orderStatus: OrderStatus?
     var customerName: String?
@@ -52,9 +49,19 @@ enum OrderStatus: String {
 }
 
 
-struct OrderOption: Equatable {
+struct Table: Equatable {
+    
+    var id: String?
+    var size: TableSize?
+    var options: [String]?
+    
+}
+
+
+struct TableSize: Equatable {
     
     var id: String?
     var name: String?
+    var maxCount: Int?
     
 }

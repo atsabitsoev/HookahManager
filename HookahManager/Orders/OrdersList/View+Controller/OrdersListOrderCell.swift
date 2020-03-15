@@ -22,11 +22,11 @@ class OrdersListOrderCell: UITableViewCell {
     func configure(with order: Order) {
         
         labDateTime.text = order.dateTime?.getDateStringFromSeconds(dateFormat: "HH:mm, dd MMMM")
-        labCustomersCount.text = getPersonCountString(count: order.customerCount ?? 0)
+        labCustomersCount.text = getPersonCountString(count: order.table?.size?.maxCount ?? 0)
         labName.text = order.customerName
         labNumber.text = "№\(order.number ?? "null")"
         viewStatusColor.backgroundColor = order.orderStatus == .some(.waiting) ? .systemYellow : .systemGreen
-        setStackOptions(order.options ?? [])
+        setStackOptions(order.table?.options ?? [])
     }
     
     
@@ -45,15 +45,15 @@ class OrdersListOrderCell: UITableViewCell {
                 personCountAddingString = "персон"
             }
         }
-        return "\(count) \(personCountAddingString)"
+        return "Столик на \(count) \(personCountAddingString)"
     }
     
     
-    private func setStackOptions(_ options: [OrderOption]) {
+    private func setStackOptions(_ options: [String]) {
         
         let labels = options.map { (option) -> UILabel in
             let label = UILabel()
-            label.text = "– " + (option.name ?? "Опция недоступна")
+            label.text = "– " + (option)
             return label
         }
         stackOptions.arrangedSubviews.forEach { (view) in
