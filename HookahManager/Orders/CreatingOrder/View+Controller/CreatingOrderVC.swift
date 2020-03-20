@@ -21,7 +21,10 @@ class CreatingOrderVC: UIViewController {
     @IBOutlet weak var butChooseDateTime: ButtonNext!
     
     var tapRecognizer: UITapGestureRecognizer!
-            
+    
+    
+    let model = CreatingOrderModel()
+    
     
     var availableDays: [Int]?
     
@@ -83,15 +86,7 @@ class CreatingOrderVC: UIViewController {
         setDelegates()
         setEmptyOrder()
         
-        availableTables = [Table(id: "jfsdsdf",
-                                 size: TableSize(id: "sfdoii", name: "Маленький", maxCount: 2),
-                                 options: ["У окна", "С PlayStation"]),
-                           Table(id: "dfgfgsfg",
-                                 size: TableSize(id: "4gsffg", name: "Средний", maxCount: 4),
-                                 options: ["Мягкие сидения"]),
-                           Table(id: "gterggeregr",
-                                 size: TableSize(id: "4gsffg", name: "Средний", maxCount: 4),
-                                 options: ["У окна", "С PlayStation"])]
+        getAvailableTables()
         checkButChooseDateTime()
     }
 
@@ -214,6 +209,18 @@ class CreatingOrderVC: UIViewController {
     private func getAvailableFullDates() {
         availableFullDates = [1583589600, 1583591400, 1583600400, 1583609400]
         hideAndShowViewSelectDateTime()
+    }
+    
+    private func getAvailableTables() {
+        model.fetchAvailableTables({ (tables, errorString) in
+            guard let tables = tables else {
+                print(errorString ?? "Неизвестная ошибка")
+                return
+            }
+            
+            self.availableTables = tables
+            self.tableView.reloadData()
+        })
     }
     
     

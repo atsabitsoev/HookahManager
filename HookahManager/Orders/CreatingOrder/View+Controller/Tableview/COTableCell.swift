@@ -19,6 +19,7 @@ class COTableCell: UICollectionViewCell {
         
         guard let options = options else {
             labOptions.text = "Без дополнительных опций"
+            viewBackground.backgroundColor = selected ? #colorLiteral(red: 1, green: 0.8392156863, blue: 0.03921568627, alpha: 1) : #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.9568627451, alpha: 1)
             return
         }
         

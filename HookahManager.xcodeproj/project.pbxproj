@@ -29,6 +29,7 @@
 		ACA0D8FD2418211100821D42 /* ButtonNext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0D8FC2418211100821D42 /* ButtonNext.swift */; };
 		ACA0D8FF2418241200821D42 /* CreatingOrderTableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0D8FE2418241200821D42 /* CreatingOrderTableview.swift */; };
 		ACA0D9082418387900821D42 /* CONameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0D9072418387900821D42 /* CONameCell.swift */; };
+		ACBBC714242578E900053195 /* CreatingOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBBC713242578E900053195 /* CreatingOrderModel.swift */; };
 		ACC2BA73241E8A3B00467F23 /* COSelectTableSizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2BA72241E8A3B00467F23 /* COSelectTableSizeCell.swift */; };
 		ACC2BA79241EA65F00467F23 /* COTableSizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2BA78241EA65F00467F23 /* COTableSizeCell.swift */; };
 		D91484C2211381F2377C77F6 /* Pods_HookahManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D114CDBE5050B024A13009B /* Pods_HookahManager.framework */; };
@@ -61,6 +62,7 @@
 		ACA0D8FC2418211100821D42 /* ButtonNext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNext.swift; sourceTree = "<group>"; };
 		ACA0D8FE2418241200821D42 /* CreatingOrderTableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingOrderTableview.swift; sourceTree = "<group>"; };
 		ACA0D9072418387900821D42 /* CONameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CONameCell.swift; sourceTree = "<group>"; };
+		ACBBC713242578E900053195 /* CreatingOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingOrderModel.swift; sourceTree = "<group>"; };
 		ACC2BA72241E8A3B00467F23 /* COSelectTableSizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COSelectTableSizeCell.swift; sourceTree = "<group>"; };
 		ACC2BA78241EA65F00467F23 /* COTableSizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COTableSizeCell.swift; sourceTree = "<group>"; };
 		F6BB56AFFFC0F307321AA0D8 /* Pods-HookahManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HookahManager.debug.xcconfig"; path = "Target Support Files/Pods-HookahManager/Pods-HookahManager.debug.xcconfig"; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				AC93379E24181E5D0076F3BD /* View+Controller */,
+				ACBBC712242578CC00053195 /* Model */,
 			);
 			path = CreatingOrder;
 			sourceTree = "<group>";
@@ -247,6 +250,14 @@
 				AC1C0D00241EBDA200EB8336 /* COTableCell.swift */,
 			);
 			path = Tableview;
+			sourceTree = "<group>";
+		};
+		ACBBC712242578CC00053195 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ACBBC713242578E900053195 /* CreatingOrderModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F96CC00802ECB9400195E6BA /* Pods */ = {
@@ -397,6 +408,7 @@
 				AC0D6119241652F000DFE069 /* AppDelegate.swift in Sources */,
 				AC1C0D01241EBDA200EB8336 /* COTableCell.swift in Sources */,
 				AC555EAE2419826B005A8847 /* OrdersListModel.swift in Sources */,
+				ACBBC714242578E900053195 /* CreatingOrderModel.swift in Sources */,
 				AC0D613A2416780A00DFE069 /* OrdersListTableview.swift in Sources */,
 				AC0D611B241652F000DFE069 /* SceneDelegate.swift in Sources */,
 				AC0D61362416554700DFE069 /* OrdersListVC.swift in Sources */,
